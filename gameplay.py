@@ -18,17 +18,15 @@ dot_clicked = None
 lines = [] # stores lines already drawn 
 potential_boxes = [] # all possible boxes
 score = [0, 0] # the scoreboard
-
-x=score[0]
-y=score[0]
 #text and fonts for points,score cards are created on screen 
-font=pygame.font.Font(r"assets/OdibeeSans-Regular.ttf",20)
-p1_point=font.render("Player 1:"+str(x),True,"white","black")
-p2_point=font.render("Player 2:"+str(y).format(y),True,"white","black")
+font = pygame.font.Font(r"DotsAndBoxes-main/assets/OdibeeSans-Regular.ttf", 20)
+p1_point = font.render(f"Player 1: {score[0]}", True, "white", "black")
+p2_point = font.render(f"Player 2: {score[1]}", True, "white", "black")
 #text for game over screen
-Font=pygame.font.Font(r"assets/DeliciousHandrawn-Regular.ttf",50)
-p1_wins=Font.render("Player 1 Wins !",True,"red","black")
-p2_wins=Font.render("Player 2 Wins !",True,"green","black")
+Font = pygame.font.Font(r"DotsAndBoxes-main/assets/DeliciousHandrawn-Regular.ttf", 50)
+outcomes=[Font.render("Draw !", True, "white"),
+          Font.render("Player 1 Wins !", True, "red"),
+          Font.render("Player 2 Wins !", True, "green")]
 
 for i in range(4):
     for j in range(4):
@@ -83,12 +81,13 @@ while running:
 
     for line in lines:
         pygame.draw.line(screen, "white", *line)
-
-    p1_point=font.render("Player 1:"+ str(score[0]), True, "red", "black") #Code for updating score 
+    
+    # Code for updating score
+    p1_point=font.render("Player 1:"+ str(score[0]), True, "red", "black") 
     p2_point=font.render("Player 2:"+ str(score[1]), True, "green", "black")
     screen.blit(p1_point, (50, 50))
     screen.blit(p2_point, (700, 50))
-    
+    potential_boxes = []
     if score[0] > score[1]:
         player_lead = 1
     elif score[0] < score[1]:
@@ -98,13 +97,9 @@ while running:
  
     if potential_boxes == []:
         screen.fill("black")
-        if player_lead == 0:
-            pass
-        elif player_lead == 1:
-            screen.blit(p1_wins, (285, 280)) 
-        elif player_lead == 2:
-            screen.blit(p2_wins, (285, 280))
+        screen.blit(outcomes[player_lead], (285, 280))
 
     pygame.display.flip()
 
 pygame.quit()
+# eof
