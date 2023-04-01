@@ -1,7 +1,5 @@
 ![Plasmo Notion](https://user-images.githubusercontent.com/64391274/219694678-8f1a2829-b0b2-41de-9152-4c4a4e43c2d5.png)
 
-
-# This is a work in progress.
 <hr/> 
 
 # Dots and Boxes
@@ -14,16 +12,14 @@ can be drawn.
 ## Team members
 1. [Aravind Suresh Thakidayil](https://github.com/AravindSureshThakidayil)
 2. [Sūraj Krishna](https://github.com/IAMSUPERBOY)
-## Link to product walkthrough
-[link to video]
+## Walkthrough
+[Link to YouTube video](https://youtu.be/6TOvCHuVRLA)
 ## Working
-Explaining the working of project
-1. The algorithm is quite simple: lines are removed from a pre-written collection
-of boxes as they are drawn. Once a box is removed entirely, the player receives
-a point.
-2. Embed video of project demo
+The algorithm here is quite simple: lines are removed from a pre-written collection
+of boxes as they are drawn. The incumbent player receives
+a point for each _potential_ box that seems to have been removed.
 ## Libraries used
-PyGame is the only dependency used here.
+PyGame (v2.3.0) is the only dependency here.
 ## Configuration
 On a computer with a Python interpreter and sufficient functionality to run PyGame,
 download this repository and run `start.py`.
