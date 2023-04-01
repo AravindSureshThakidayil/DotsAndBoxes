@@ -16,12 +16,17 @@ can be drawn.
 2. [Sūraj Krishna](https://github.com/IAMSUPERBOY)
 ## Link to product walkthrough
 [link to video]
-## How it Works ?
-1. Explaining the working of project
+## Working
+Explaining the working of project
+1. The algorithm is quite simple: lines are removed from a pre-written collection
+of boxes as they are drawn. Once a box is removed entirely, the player receives
+a point.
 2. Embed video of project demo
 ## Libraries used
-Library Name - Version
-## How to configure
-Instructions for setting up project
+PyGame is the only dependency used here.
+## Configuration
+On a computer with a Python interpreter and sufficient functionality to run PyGame,
+download this repository and run `start.py`.
 ## How to Run
-Instructions for running
+Simply execute `start.py`. Press enter to get to the grid. Click on a dot to draw a line from that dot
+and click on a second, adjacent dot to complete it. Scores are on either side.
