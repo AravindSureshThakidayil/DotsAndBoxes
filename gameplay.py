@@ -19,14 +19,14 @@ lines = [] # stores lines already drawn
 potential_boxes = [] # all possible boxes
 score = [0, 0] # the scoreboard
 #text and fonts for points,score cards are created on screen 
-font = pygame.font.Font(r"DotsAndBoxes-main/assets/OdibeeSans-Regular.ttf", 20)
+font = pygame.font.Font(r"assets/OdibeeSans-Regular.ttf", 20)
 p1_point = font.render(f"Player 1: {score[0]}", True, "white", "black")
 p2_point = font.render(f"Player 2: {score[1]}", True, "white", "black")
 #text for game over screen
-Font = pygame.font.Font(r"DotsAndBoxes-main/assets/DeliciousHandrawn-Regular.ttf", 50)
+Font = pygame.font.Font(r"assets/DeliciousHandrawn-Regular.ttf", 50)
 outcomes=[Font.render("Draw !", True, "white"),
-          Font.render("Player 1 Wins !", True, "red"),
-          Font.render("Player 2 Wins !", True, "green")]
+          Font.render("Player 2 Wins !", True, "green"),
+          Font.render("Player 1 Wins !", True, "red")]
 
 for i in range(4):
     for j in range(4):
@@ -83,8 +83,8 @@ while running:
         pygame.draw.line(screen, "white", *line)
     
     # Code for updating score
-    p1_point=font.render("Player 1:"+ str(score[0]), True, "red", "black") 
-    p2_point=font.render("Player 2:"+ str(score[1]), True, "green", "black")
+    p1_point=font.render("Player 1:"+ str(score[1]), True, "red", "black") 
+    p2_point=font.render("Player 2:"+ str(score[0]), True, "green", "black")
     screen.blit(p1_point, (50, 50))
     screen.blit(p2_point, (700, 50))
     
