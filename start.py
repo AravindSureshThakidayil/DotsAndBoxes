@@ -101,7 +101,7 @@ while running_intro:
             if event.key==K_RETURN:
                  Entry_win_state=True
             if Entry_key==1:
-                 print("HALLELUJAH")
+                 import gameplay
             
 
     intro()
@@ -111,8 +111,7 @@ while running_intro:
        
          Entry_key=1
          if ((abs(p.mouse.get_pos()[0]-368)<=64 and abs(p.mouse.get_pos()[1]-268)<=64)) and (p.mouse.get_pressed()[0]):
-              
-              print("HALLELUJAH")
+                import game
         
          
     
