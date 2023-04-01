@@ -64,13 +64,13 @@ HEIGHT=600
 Entry_key=0
 p.init()
 screen=p.display.set_mode((WIDTH,HEIGHT))
-play_button=p.image.load("play-button.png")
+play_button=p.image.load("assets/play-button.png")
 
 
-Font=p.font.Font("Montserrat-VariableFont_wght.ttf",64)
-Font_welcome=p.font.Font("Montserrat-VariableFont_wght.ttf",100)
-font_title=p.font.Font("DeliciousHandrawn-Regular.ttf",100)
-font_instru=p.font.Font("DeliciousHandrawn-Regular.ttf",60)
+Font=p.font.Font("assets/Montserrat-VariableFont_wght.ttf",64)
+Font_welcome=p.font.Font("assets/Montserrat-VariableFont_wght.ttf",100)
+font_title=p.font.Font("assets/DeliciousHandrawn-Regular.ttf",100)
+font_instru=p.font.Font("assets/DeliciousHandrawn-Regular.ttf",60)
 text1=font_title.render("DOTS",True,WHITE,BLACK)
 text2=font_title.render("BOXES",True,WHITE,BLACK)
 text3=font_instru.render("&",True,WHITE,BLACK)
