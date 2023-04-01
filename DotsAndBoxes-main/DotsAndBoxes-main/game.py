@@ -4,8 +4,7 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
 
-running = True 
-End_state=False #to show game over page 
+running = True  
 player = 0 # alternates between 0 and 1 during the course of the game
 player_colours = ["red", "green"]
 player_lead=0
@@ -13,7 +12,8 @@ player_lead=0
 dot_posns = [] * 25 # positions of each of the dots on the 5*5 grid 
 for x in range(0, 5):
     for y in range(0, 5):
-        dot_posns.append(((x+1) * screen.get_width() / 6, (y+1) * screen.get_height() / 6))
+        dot_posns.append(((x + 1) * screen.get_width() / 6,
+                          (y + 1) * screen.get_height() / 6))
 
 dot_clicked = None
 lines = [] # stores lines already drawn 
@@ -75,29 +75,26 @@ while running:
 
     for line in lines:
         pygame.draw.line(screen, "white", *line)
-    p1_point=font.render("Player 1:"+str(score[0]),True,"red","black") #Code for updating score 
-    p2_point=font.render("Player 2:"+str(score[1]),True,"green","black")
-    screen.blit(p1_point,(50,50))
-    screen.blit(p2_point,(700,50))
+    p1_point=font.render("Player 1:"+ str(score[0]), True, "red", "black") #Code for updating score 
+    p2_point=font.render("Player 2:"+ str(score[1]), True, "green", "black")
+    screen.blit(p1_point, (50, 50))
+    screen.blit(p2_point, (700, 50))
     
-    if score[0]>score[1]:
-        player_lead=1
-    elif score[0]<score[1]:
-        player_lead=2
+    if score[0] > score[1]:
+        player_lead = 1
+    elif score[0] < score[1]:
+        player_lead = 2
     else:
-        player=0
+        player_lead = 0
  
-    if End_state == True:
+    if potential_boxes == []:
         screen.fill("black")
-        if player_lead==0:
+        if player_lead == 0:
             pass
-        elif player_lead==1:
-            screen.blit(p1_wins,(285,280)) 
-        elif player_lead==2:
-            screen.blit(p2_wins,(285,280))
-
-        
-                    
+        elif player_lead == 1:
+            screen.blit(p1_wins, (285, 280)) 
+        elif player_lead == 2:
+            screen.blit(p2_wins, (285, 280))
 
     pygame.display.flip()
 
