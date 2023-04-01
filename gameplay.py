@@ -87,7 +87,7 @@ while running:
     p2_point=font.render("Player 2:"+ str(score[1]), True, "green", "black")
     screen.blit(p1_point, (50, 50))
     screen.blit(p2_point, (700, 50))
-    potential_boxes = []
+    
     if score[0] > score[1]:
         player_lead = 1
     elif score[0] < score[1]:
